@@ -1,0 +1,30 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/meeting']
+        }
+    }
+    test {
+        java {
+            srcDirs = ["test/meeting"]
+        }
+    }
+}
+
+dependencies {
+    testCompile "junit:junit:4.12"
+}
+
+jar {
+    baseName = 'diconvergent'
+    version =  '0.1.0'
+}
