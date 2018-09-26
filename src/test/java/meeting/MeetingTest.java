@@ -6,7 +6,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.UUID;
 
-import static org.junit.Assert.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MeetingTest {
 
@@ -39,6 +39,6 @@ public class MeetingTest {
             new Programme(programSlots)
         );
 
-        assertTrue(meeting instanceof Meeting);
+        assertThat(meeting).isInstanceOf(Meeting.class);
     }
 }
