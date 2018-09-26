@@ -1,13 +1,12 @@
 package meeting;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
-import java.util.UUID;
-import meeting.Meeting;
-import meeting.Programme;
-import meeting.ProgramSlot;
 
-import java.util.*;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.UUID;
+
+import static org.junit.Assert.assertTrue;
 
 public class MeetingTest {
 
