@@ -1,14 +1,14 @@
 package meeting;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class ProgramSlot {
-    private Date start;
-    private Date end;
+    private LocalDateTime start;
+    private LocalDateTime end;
     private String title;
     private String room;
 
-    public ProgramSlot(Date start, Date end, String title, String room)
+    public ProgramSlot(LocalDateTime start, LocalDateTime end, String title, String room)
     {
         this.start = start;
         this.end = end;
