@@ -1,13 +1,12 @@
 package meeting;
 
 import org.junit.Test;
-import static org.junit.Assert.*;
-import java.util.UUID;
-import meeting.Meeting;
-import meeting.Programme;
-import meeting.ProgramSlot;
 
-import java.util.*;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.util.UUID;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MeetingTest {
 
@@ -16,16 +15,16 @@ public class MeetingTest {
         ProgramSlot[] programSlots = new ProgramSlot[2];
 
         ProgramSlot programSlot1 = new ProgramSlot(
-            new GregorianCalendar(2017, Calendar.DECEMBER, 15, 19, 00, 00).getTime(),
-            new GregorianCalendar(2017, Calendar.DECEMBER, 15, 20, 00, 00).getTime(),
+                LocalDateTime.of(2017, Month.DECEMBER, 15, 19, 0, 0),
+                LocalDateTime.of(2017, Month.DECEMBER, 15, 20, 0, 0),
             "Divergence",
             "Main room"
         );
         programSlots[0] = programSlot1;
 
         ProgramSlot programSlot2 = new ProgramSlot(
-                new GregorianCalendar(2017, Calendar.DECEMBER, 15, 20, 00, 00).getTime(),
-                new GregorianCalendar(2017, Calendar.DECEMBER, 15, 21, 00, 00).getTime(),
+                LocalDateTime.of(2017, Month.DECEMBER, 15, 20, 0, 0),
+                LocalDateTime.of(2017, Month.DECEMBER, 15, 21, 0, 0),
                 "Convergence",
                 "Main room"
         );
@@ -35,11 +34,11 @@ public class MeetingTest {
             UUID.randomUUID(),
             "(Di|con)vergent mob refactoring",
             "This is a silly workshop, don't come",
-            new GregorianCalendar(2017, Calendar.DECEMBER, 15, 19, 00, 00).getTime(),
-            new GregorianCalendar(2017, Calendar.DECEMBER, 15, 21, 00, 00).getTime(),
+                LocalDateTime.of(2017, Month.DECEMBER, 15, 19, 0, 0),
+                LocalDateTime.of(2017, Month.DECEMBER, 15, 21, 0, 0),
             new Programme(programSlots)
         );
 
-        assertTrue(meeting instanceof Meeting);
+        assertThat(meeting).isInstanceOf(Meeting.class);
     }
 }
